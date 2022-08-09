@@ -22,4 +22,4 @@ console.log("new name " + myName);
 
 // const, let을 보고 코드 규칙을 대략적으로 파악 가능.
 // 예) myName은 어디선가 값이 새로 업데이트 될 수 있음.
-//5:22
+//5:22  https://www.youtube.com/watch?v=Wm1Fj1tLkFs
