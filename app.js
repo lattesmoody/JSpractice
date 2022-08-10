@@ -1,16 +1,21 @@
-// 데이터 정리
-// array란 하나의 variable 안에 데이터의 list를 가지는 것.
+// # 2.6 Objects
+const player = {// 중괄호를 열어야 함.
+    name: "BESTCHOCO",
+    points: 10, 
+    fat: true,
+} 
 
-const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+console.log(player);
+console.log(player.name);
+console.log(player["name"]);
 
-console.log(daysOfWeek[0]);
+player.fat = false;
+console.log(player);
 
-daysOfWeek.push("sun");
+// const는 수정할 수 없지만 왜 값이 변경되었는가?
+// player = false라고 했을 때 (constant 전체를 하나의 값으로서 업데이트 할 때 오류 발생)
+// constant 안의 무언가를 업데이트 할 때는 아무 문제 없다.
 
-console.log(daysOfWeek);
-
-const toBuy = ["potato", "tomato", "pizza"];
-
-toBuy.push("kimbab");
-
-console.log(toBuy);
+player.lastName = "potato"; // 원하는 property 새로 생성 가능.
+player.points = player.points + 15;
+console.log(player);
