@@ -1,21 +1,35 @@
-// # 2.6 Objects
-const player = {// 중괄호를 열어야 함.
-    name: "BESTCHOCO",
-    points: 10, 
-    fat: true,
-} 
+// #2.7 Funcions
 
-console.log(player);
+// function: 반복해서 사용할 수 있는 코드 조각.
+// 코드를 캡슐화하여 실행을 여러 번 할 수 있게 해준다.
+
+function sayHello(nameOfPerson, age) {
+  console.log("hello! my name is ", nameOfPerson, " and I'm ", age);
+}
+
+sayHello("a", 10);
+sayHello("b", 23);
+sayHello("c", 32);
+
+// argument: function을 실행하는 동안 어떤 정보를 function에게 보낼 수 있는 방법
+
+function plus(a, b) {
+  console.log(a + b);
+}
+
+function divide(a, b) {
+  console.log(a / b);
+}
+plus(8, 60);
+divide (98,20);
+
+// NaN : Not a Number
+
+const player = {
+    name: "choco",
+    sayHello2: function(personName){
+        console.log("hello,",personName, "nice to meet you");
+    }
+}
 console.log(player.name);
-console.log(player["name"]);
-
-player.fat = false;
-console.log(player);
-
-// const는 수정할 수 없지만 왜 값이 변경되었는가?
-// player = false라고 했을 때 (constant 전체를 하나의 값으로서 업데이트 할 때 오류 발생)
-// constant 안의 무언가를 업데이트 할 때는 아무 문제 없다.
-
-player.lastName = "potato"; // 원하는 property 새로 생성 가능.
-player.points = player.points + 15;
-console.log(player);
+player.sayHello2("chocoya");
