@@ -1,18 +1,22 @@
-//const hellos = document.getElementsByClassName("hello");
-//console.log(hellos);
+// app.js가 있기 때문에 javascript를 통해 HTML의 내용르 가져올 수 있다.
 
-//const title = document.getElementsByTagName("h1");
-// tag는 anchor, div, section, button 같은 것들을 의미한다.
-//console.log(title);
+// document가 HTML이 app.js를 load하기 때문에 존재하는 것.
+// 그 다음 browser가 우리가 document에 접근 할 수 있게 해준다.
 
-// querySelector는 element를 CSS 방식으로 검색 가능.
-// 예) hello란 class 내부에 있는 h1을 가지고 온다.
-const title = document.querySelector(".hello h1");
-//const title = document.querySelector("div h1");
-console.log(title);
-// querySelector는 단 하나의 element를 return 해준다.
-const title2 = document.querySelectorAll(".hello h1");
-console.log(title2);
-// querySelectorAll은 이 selector 안의 조건에 부합하는 모든 element를 가져다준다.
+// querySelector는 CSS Selector를 전달할 수 있다.
 
-title.innerText = "hello";
+const title = document.querySelector("div.hello:first-child h1");
+//console.dir(title);
+
+//title.style.color = "blue"
+
+// JavaScript에서 대부분 작업할 일은 event를 listen.
+
+function handleTitleClick(){
+    title.style.color = "blue"
+    console.log("title was clicked!");
+}
+
+title.addEventListener("click",handleTitleClick)
+// listen 하고 싶은 event, event 발생 시 호출할 function 전달.
+// 두 번째 인자의 경우 괄호 포함되서는 안 된다.
