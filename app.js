@@ -1,18 +1,23 @@
 const h1 = document.querySelector("div.hello:first-child h1");
 
 function handleTitleClick() {
-  //h1.className = "active"; //className: getter/setter
-  //console.log(h1.className);
   const clickedClass = "clicked";
-  if(h1.className === clickedClass){
-    h1.className = "";
-  }else{
-    h1.className = clickedClass;
+  // if(h1.className === clickedClass){
+  //   h1.className = "";
+  // }
+  if(h1.classList.contains(clickedClass)){
+    //h1.className = "";
+    h1.classList.remove(clickedClass);
+  }
+  else{
+    //h1.className = clickedClass;
+    h1.classList.add(clickedClass);
   }
 }
-// raw value는 지양할 것.
+
 h1.addEventListener("click",handleTitleClick);
 
-// #3.7 CSS in Javascript
-// JavaScript로 모든 class name을 변경하지 않아야 함.
-// 단지 clicked class를 변경하고 싶다.
+// DOMTokenList.contains(token)
+// => 명시한 class가 HTML element의 class에 포함되어 있는지 말해준다.
+
+ // classList: element의 class 내용물을 조작하는 것을 허용한다.
