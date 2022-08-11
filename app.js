@@ -1,23 +1,11 @@
 const h1 = document.querySelector("div.hello:first-child h1");
 
 function handleTitleClick() {
-  const clickedClass = "clicked";
-  // if(h1.className === clickedClass){
-  //   h1.className = "";
-  // }
-  if(h1.classList.contains(clickedClass)){
-    //h1.className = "";
-    h1.classList.remove(clickedClass);
-  }
-  else{
-    //h1.className = clickedClass;
-    h1.classList.add(clickedClass);
-  }
+  h1.classList.toggle("clicked");
 }
 
 h1.addEventListener("click",handleTitleClick);
 
-// DOMTokenList.contains(token)
-// => 명시한 class가 HTML element의 class에 포함되어 있는지 말해준다.
-
- // classList: element의 class 내용물을 조작하는 것을 허용한다.
+// toggle function: class name이 존재하는지 여부 확인.
+// class name 존재 시, toggle은 class name을 제거.
+// class name 미 존재 시, toggle은 class name을 추가한다.
